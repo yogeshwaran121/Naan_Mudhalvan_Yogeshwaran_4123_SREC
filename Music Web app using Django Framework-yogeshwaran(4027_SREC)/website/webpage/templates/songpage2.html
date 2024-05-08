@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERFECT</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(9, 31, 31, 0.068);
+            background-size:cover;
+            color: black;
+            font-weight: bold;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        
+        .song {
+            display: flex;
+            width: 800px;
+            align-items: center;
+        }
+        
+        .cover-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+        
+        .song-details {
+            text-align: left;
+        }
+        
+        .song-title {
+            font-size: 24px;
+            margin-top: px;
+
+        }
+        
+        .artist,
+        .album {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        audio {
+            width: 300px;
+            margin-top: 20px;
+        }
+        .aside
+        {
+            width: 30%;
+            float: right;
+            padding: 20px;
+            margin-bottom: 250px;
+        }
+        #toggleLyricsButton
+        {
+            padding:10px;
+            color: antiquewhite;
+            margin-left: 410px;
+            transition: 0.6s;
+            background-color: rgba(0, 0, 0, 0.164);
+            box-shadow : 15px 15px 25px rgba(0,0,0.3);
+            font-weight: 800;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #toggleLyricsButton:hover
+        {
+            letter-spacing: 0.2em;
+            background-color: red;
+        }
+        #lyrics
+        {
+            width: 50%;
+            text-align: center;
+            margin-left: 210px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="song">
+            <img src="{% static 'images/perfect.jpg' %}" alt="Song Cover" class="cover-image">
+            <div class="song-details">
+                <h1 class="song-title">Perfect</h1>
+                <p class="artist">Artist : Ed-Sheeran</p>
+                <p class="album">Album : Ed-Sheeran</p>
+                <audio controls>
+                    <source src="{% static 'audio/videoplayback.weba.crdownload' %}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </div>
+    <br>
+                <button id="toggleLyricsButton" onclick="">Show Lyrics</button>
+                    <div id="lyrics" style="display: none;"><br><br>
+                   <p>I found a love, for me<br>
+                     Darling, just dive right in and follow my lead<br>
+                     Well, I found a girl, beautiful and sweet<br>
+                     Oh, I never knew you were the someone waiting for me<br>
+                     'Cause we were just kids when we fell in love<br>
+                     Not knowing what it was<br>
+                     I will not give you up this time<br>
+                     But darling, just kiss me slow<br>
+                     Your heart is all I own<br>
+                     And in your eyes, you're holding mine<br>
+                     Baby, I'm dancing in the dark<br>
+                     With you between my arms<br>
+                     Barefoot on the grass<br>
+                     Listening to our favourite song<br>
+                     When you said you looked a mess<br>
+                     I whispered underneath my breath<br>
+                     But you heard it<br>
+                     Darling, you look perfect tonight<br>
+                     Well, I found a woman, stronger than anyone I know<br>
+                     She shares my dreams, I hope that someday I'll share her home<br>
+                     I found a lover, to carry more than just my secrets<br>
+                     To carry love, to carry children of our own<br>
+                     We are still kids, but we're so in love<br>
+                     Fighting against all odds<br>
+                     I know we'll be alright this time<br>
+                     Darling, just hold my hand<br>
+                     Be my girl, I'll be your man<br>
+                     I see my future in your eyes<br>
+                     Baby, I'm dancing in the dark<br>
+                     With you between my arms<br>
+                     Barefoot on the grass<br>
+                     Listening to our favorite song<br>
+                     When I saw you in that dress, looking so beautiful<br>
+                     I don't deserve this<br>
+                     Darling, you look perfect tonight<br>
+                     (No, no, no)<br>
+                     Baby, I'm dancing in the dark<br>
+                     With you between my arms<br>
+                     Barefoot on the grass<br>
+                     Listening to our favorite song<br>
+                     I have faith in what I see<br>
+                     Now I know I have met an angel in person<br>
+                     And she looks perfect<br>
+                     I don't deserve this<br>
+                     You look perfect tonight<br></p>
+                    </div>
+    <script>
+        document.getElementById("toggleLyricsButton").addEventListener("click", function(){
+            var lyricsDiv = document.getElementById("lyrics");
+            var button = document.getElementById("toggleLyricsButton");
+        
+            if (lyricsDiv.style.display === "none") {
+                lyricsDiv.style.display = "block";
+                button.textContent = "Hide Lyrics";
+            } else {
+                lyricsDiv.style.display = "none";
+                button.textContent = "Show Lyrics";
+            }
+        });
+        
+    </script>
+</body>
+</html>

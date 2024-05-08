@@ -1,0 +1,160 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XXXTENTACION</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(9, 31, 31, 0.068);
+            background-size:cover;
+            color: black;
+            font-weight: bold;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        
+        .song {
+            display: flex;
+            width: 800px;
+            align-items: center;
+        }
+        
+        .cover-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+        
+        .song-details {
+            text-align: left;
+        }
+        
+        .song-title {
+            font-size: 24px;
+            margin-top: px;
+
+        }
+        
+        .artist,
+        .album {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        audio {
+            width: 300px;
+            margin-top: 20px;
+        }
+        .aside
+        {
+            width: 30%;
+            float: right;
+            padding: 20px;
+            margin-bottom: 250px;
+        }
+        #toggleLyricsButton
+        {
+            padding:10px;
+            color: antiquewhite;
+            margin-left: 410px;
+            transition: 0.6s;
+            background-color: rgba(0, 0, 0, 0.164);
+            box-shadow : 15px 15px 25px rgba(0,0,0.3);
+            font-weight: 800;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #toggleLyricsButton:hover
+        {
+            letter-spacing: 0.2em;
+            background-color: red;
+        }
+        #lyrics
+        {
+            width: 50%;
+            text-align: center;
+            margin-left: 210px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="song">
+            <img src="{% static 'images/xxxtentacion.jpeg' %}" alt="Song Cover" class="cover-image">
+            <div class="song-details">
+                <h1 class="song-title">Hope</h1>
+                <p class="artist">Artist : XXXTENTACION</p>
+                <p class="album">Album : XXXTENTACION-HOPE</p>
+                <audio controls>
+                    <source src="{% static 'audio/XXXTENTACION - Hope _ Lyrics.mp4' %}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </div>
+    <br>
+                <button id="toggleLyricsButton" onclick="">Show Lyrics</button>
+                    <div id="lyrics" style="display: none;"><br><br>
+                   <p>Yeah<br>
+                     Rest in peace to all the kids that lost their lives in the Parkland shooting<br>
+                     This song is dedicated to you<br>
+                     Okay, she keep cryin', she keep cryin' every single night<br>
+                     Day and night, on my mind, please don't kill the vibe<br>
+                     Oh no, I swear to God, I be in my mind<br>
+                     Swear I wanna die, yeah, when you cross my-<br>
+                     Said I wanna die, yuh<br>
+                     No, I'm not alright, yuh<br>
+                     I might start a riot<br>
+                     I'm so fuckin' tired, yuh<br>
+                     So what's up? What you say?<br>
+                     Feelin' good, I'm feelin' great<br>
+                     Tired of the fuckin' hate<br>
+                     Stackin' cheese all on my plate<br>
+                     So outside of my misery, I think I'll find<br>
+                     A way of envisioning a better life<br>
+                     For the rest of us, the rest of us<br>
+                     There's hope for the rest of us, the rest of us<br>
+                     Okay, she keep cryin', she keep cryin' every single night<br>
+                     Day and night, on my mind, please don't kill the vibe<br>
+                     Oh, no, I swear to God, I be in my mind<br>
+                     Swear I wanna die, yeah, when you cross my-<br>
+                     Said I wanna die, yuh<br>
+                     No, I'm not alright, yuh<br>
+                     I might start a riot<br>
+                     I'm so fuckin' tired, yuh<br>
+                     So what's up? What you say?<br>
+                     Feelin' good, I'm feelin' great<br>
+                     Tired of the fuckin' hate<br>
+                     Stackin' cheese all on my plate</p>
+                    </div>
+    <script>
+        document.getElementById("toggleLyricsButton").addEventListener("click", function(){
+            var lyricsDiv = document.getElementById("lyrics");
+            var button = document.getElementById("toggleLyricsButton");
+        
+            if (lyricsDiv.style.display === "none") {
+                lyricsDiv.style.display = "block";
+                button.textContent = "Hide Lyrics";
+            } else {
+                lyricsDiv.style.display = "none";
+                button.textContent = "Show Lyrics";
+            }
+        });
+        
+    </script>
+</body>
+</html>

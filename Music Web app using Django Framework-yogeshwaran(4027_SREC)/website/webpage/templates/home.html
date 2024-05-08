@@ -1,0 +1,317 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+      <title>MUSIC WEB APPLICATION</title>
+
+      <link rel = "stylesheet" href ="{% static 'css/header.css' %}">
+      <link rel = "stylesheet" href ="{% static 'css/video.css' %}">
+      <link rel = "stylesheet" href ="{% static 'css/sidebar.css' %}">
+      <style>
+
+         p {
+            font-family: roboto, Arial;
+            margin-top: 0px;
+            margin-bottom: 0px;
+         }
+         
+         body {
+            font-family: roboto, Arial;
+            margin: 0px;
+            padding-top: 80px;
+            padding-left: 96px;
+            padding-right: 24px;
+            background-color: rgb(248,248,248);
+         }
+
+
+         
+      </style>
+
+   </head>
+
+   <body>
+
+      <header class="header">
+         <div class="left-section">
+            <img class = "hamburger-menu" src="{% static 'images/hamburger-menu.svg' %}" alt = "hamburger-menu">
+            <img class="youtube-logo" src="{% static 'images/beat-blend1.webp' %}" alt = "beat-blend1">
+            <div class = "beats-blend">BeatsBlend</div>
+         </div>
+         <div class="middle-section">
+            <input class = "search-bar" type = "text" placeholder="Search">
+            <button class="search-button">
+               <img class = "search-icon" src ="{% static 'images/search.svg' %}" alt = "search">
+               <div class="tooltip">Search</div>
+            </button>
+
+            <button class="voice-search-button">
+               <img class = " voice-search-icon" src="{% static 'images/voice-search-icon.svg' %}" alt = "voice-search-icon">
+               <div class="tooltip">Search with your voice</div>
+            </button>
+
+         </div>
+         <div class="right-section">
+            <div class="upload-icon-container">
+               <img class = "upload-icon" src="{% static 'images/upload.svg' %}" alt = "upload">
+               <div class="tooltip">upload</div>
+
+            </div>
+            <div class="youtube-app-icon">
+               <img class = "youtube-apps-icon" src="{% static 'images/downloads.jpg' %}" alt = "downloads">
+               <div class = "tooltip">Your downloads</div>
+            </div>
+            
+            <div class="notification-icon-container">
+               <img class = "notification-icon" src="{% static 'images/notifications.svg' %}" alt = "notifications">
+               <div class = "tooltip">Notifications</div>
+               <div class = "notifications-count">
+                  3
+               </div>
+            </div>
+            
+           <!-- <li class="nav-item dropdown"> -->
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img class="current-user-picture" src="{% static 'images/profile-pic1.jpg' %}" alt="profile-pic1">
+               </a>
+
+               <ul class="dropdown-menu">
+                 <li><a class="dropdown-item" href="{% url 'profile' %}">profile</a></li>
+                 <li><a class="dropdown-item" href="{% url 'Login' %}">login</a></li>
+                 <li><a class="dropdown-item" href="#">logout</a></li>
+                 <li><a class="dropdown-item" href="{% url 'signup' %}">signup</a></li>
+                 <li><hr class="dropdown-divider"></li>
+                 <li><a class="dropdown-item" href="#"></a></li>
+               </ul>
+          <!--  </li>  -->
+         </div>
+
+      </header>
+
+      <nav class = "sidebar">
+         <div class="sidebar-link">
+            <img src = "{% static 'images/home.svg' %}" alt = "home">   
+            <div>home</div>
+         </div>
+         <div class="sidebar-link"> 
+            <img src = "{% static 'images/explore.svg' %}" alt = "explore">
+            <div>Explore</div>
+         </div>
+         <div class="sidebar-link"> 
+            <img src = "{% static 'images/subscriptions.jpg' %}" alt = "subscriptions">
+            <div>Subscriptions</div>
+         </div>
+         <div class="sidebar-link"> 
+            <img src = "{% static 'images/originals1.jpg' %}" alt = "originals1">
+            <div>Podcast</div>
+         </div>
+         <div class="sidebar-link"> 
+            <img src = "{% static 'images/genre.webp' %}" alt = "genre">
+            <div>genere</div>
+         </div>
+         <div class="sidebar-link"> 
+            <img src = "{% static 'images/library.svg' %}" alt = "library">
+            <div>Library</div>
+         </div> 
+      </nav>
+
+
+      <section class = "video-grid">
+         
+         <div class = "video-preview"> <!--1-->
+            <a href="{% url 'songpage2' %}">
+
+            <div class = "thumbnail-row">
+               <img class = "thumbnail" src = "{% static 'images/perfect-song.jpg' %}" alt = "perfect-song">
+               <div class="video-time">4:24</div>
+   
+            </div>
+   
+            <div class = "video-info-grid">
+               
+               <div class="video-info">
+                  <p class = "video-title">
+                     Ed Sheeran - Perfect
+                  </p>
+            
+                  <p class = "video-author">
+                     Ed Sheeran 
+                  </p>
+            
+                  <!-- <p class = "video-stats">
+                     
+                  </p> -->
+               </div>
+            </div>
+         </a>
+         </div>
+
+         <div class = "video-preview"> <!--2-->
+            <a href="{% url 'songpage' %}">
+            <div class = "thumbnail-row">
+               <img class = "thumbnail" src = "{% static 'images/dandelions-song' %}" alt = "dandelions-song">
+               <div class="video-time">03:54</div>
+   
+            </div>
+   
+            <div class = "video-info-grid">
+               
+               <div class="video-info">
+                  <p class = "video-title">
+                     Ruth B. - Dandelions
+                  </p>
+            
+                  <p class = "video-author">
+                     Ruth B. 
+                  </p>
+            
+                  <!-- <p class = "video-stats">
+                     3.4M views · 6 months ago
+                  </p> -->
+               </div>
+            </div>
+         </a>
+         </div>
+
+         <div class = "video-preview"> <!--3-->
+            <a href="{% url 'songpage3' %}">
+            <div class = "thumbnail-row">
+               <img class = "thumbnail" src = "{% static 'images/hope-song' %}" alt = "hope-song">
+               <div class="video-time">01:51</div>
+   
+            </div>
+   
+            <div class = "video-info-grid">
+               
+               <div class="video-info">
+                  <p class = "video-title">
+                     XXXTENTACION - Hope 
+                  </p>
+            
+                  <p class = "video-author">
+                     XXXTENTACION 
+                  </p>
+            
+                 <!-- <p class = "video-stats">
+                     3.4M views · 6 months ago
+                  </p> --> 
+               </div>
+            </div>
+         </a>
+         </div>
+
+         
+
+         <div class = "video-preview"> <!--4-->
+
+            <div class = "thumbnail-row">
+               <img class = "thumbnail" src = "{% static 'images/snap.jpg' %}" alt = "snap04">
+               <div class="video-time">03:16</div>
+   
+            </div>
+   
+            <div class = "video-info-grid">
+               
+               <div class="video-info">
+                  <p class = "video-title">
+                     Rosa Linn - SNAP
+                  </p>
+            
+                  <p class = "video-author">
+                     Rosa Linn
+                  </p>
+            
+                  <!-- <p class = "video-stats">
+                     3.4M views · 6 months ago
+                  </p> -->
+               </div>
+            </div>
+         </div>
+
+         <div class = "video-preview"> <!--5-->
+
+            <div class = "thumbnail-row">
+               <img class = "thumbnail" src = "{% static 'images/attention.jpg' %}" alt = "attention">
+               <div class="video-time">03:52</div>
+   
+            </div>
+   
+            <div class = "video-info-grid">
+               
+               <div class="video-info">
+                  <p class = "video-title">
+                     Charlie Puth - Attention
+                  </p>
+            
+                  <p class = "video-author">
+                     Charlie Puth 
+                  </p>
+            
+                  <!-- <p class = "video-stats">
+                     3.4M views · 6 months ago
+                  </p> -->
+               </div>
+            </div>
+         </div>
+
+         <div class = "video-preview"> <!--6-->
+
+            <div class = "thumbnail-row">
+               <img class = "thumbnail" src = "{% static 'images/baby.jpg' %}" alt = "baby">
+               <div class="video-time">03:40</div>
+   
+            </div>
+   
+            <div class = "video-info-grid">
+               
+               <div class="video-info">
+                  <p class = "video-title">
+                     Justin Bieber - Baby ft. Ludacris
+                  </p>
+            
+                  <p class = "video-author">
+                     Justin Bieber 
+                  </p>
+            
+                  <!-- <p class = "video-stats">
+                     3.4M views · 6 months ago
+                  </p> -->
+               </div>
+            </div>
+         </div>
+
+
+         <script>
+            function toggleDropdown() {
+               var dropdownContent = document.getElementById("dropdown-content");
+               dropdownContent.classList.toggle("active");
+            }
+   
+            // Close dropdown when clicking outside of it
+            window.onclick = function(event) {
+               if (!event.target.matches('.current-user-picture')) {
+                  var dropdowns = document.getElementsByClassName("dropdown-content");
+                  for (var i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('active')) {
+                           openDropdown.classList.remove('active');
+                        }
+                  }
+               }
+            }
+   
+         </script>
+
+      </section>
+
+      
+
+   </body>
+</html>

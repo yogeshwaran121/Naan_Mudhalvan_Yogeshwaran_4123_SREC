@@ -1,0 +1,170 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DANDELIONS RUTH-B</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(9, 31, 31, 0.068);
+            background-size:cover;
+            color: black;
+            font-weight: bold;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        
+        .song {
+            display: flex;
+            width: 800px;
+            align-items: center;
+        }
+        
+        .cover-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+        
+        .song-details {
+            text-align: left;
+        }
+        
+        .song-title {
+            font-size: 24px;
+            margin-top: px;
+
+        }
+        
+        .artist,
+        .album {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        audio {
+            width: 300px;
+            margin-top: 20px;
+        }
+        .aside
+        {
+            width: 30%;
+            float: right;
+            padding: 20px;
+            margin-bottom: 250px;
+        }
+        #toggleLyricsButton
+        {
+            padding:10px;
+            color: antiquewhite;
+            margin-left: 410px;
+            transition: 0.6s;
+            background-color: rgba(0, 0, 0, 0.164);
+            box-shadow : 15px 15px 25px rgba(0,0,0.3);
+            font-weight: 800;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #toggleLyricsButton:hover
+        {
+            letter-spacing: 0.2em;
+            background-color: red;
+        }
+        #lyrics
+        {
+            width: 50%;
+            text-align: center;
+            margin-left: 210px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="song">
+            <img src="{% static 'images/ruthb.jpg' %}" alt="Song Cover" class="cover-image">
+            <div class="song-details">
+                <h1 class="song-title">Dandelions</h1>
+                <p class="artist">Artist : Ruth-B</p>
+                <p class="album">Album : Ruth-B</p>
+                <audio controls>
+                    <source src="{% static 'audio/Ruth_B_-_Dandelions_CeeNaija.com_.mp3' %}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </div>
+    <br>
+                <button id="toggleLyricsButton" onclick="">Show Lyrics</button>
+                    <div id="lyrics" style="display: none;"><br><br>
+                   <p>Maybe it's the way you say my name<br>
+                     Maybe it's the way you play your game<br>
+                     But it's so good, I've never known anybody like you<br>
+                     But it's so good, I've never dreamed of nobody like you<br>
+                     And I've heard of a love that comes once in a lifetime<br>
+                     And I'm pretty sure that you are that love of mine<br>
+                     'Cause I'm in a field of dandelions<br>
+                     Wishing on every one that you'd be mine, mine<br>
+                     And I see forever in your eyes<br>
+                     I feel okay when I see you smile, smile<br>
+                     Wishing on dandelions all of the time<br>
+                     Praying to God that one day you'll be mine<br>
+                     Wishing on dandelions all of the time, all of the time<br>
+                     I think that you are the one for me<br>
+                     'Cause it gets so hard to breathe<br>
+                     When you're looking at me, I've never felt so alive and free<br>
+                     When you're looking at me, I've never felt so happy<br>
+                     And I've heard of a love that comes once in a lifetime<br>
+                     And I'm pretty sure that you are that love of mine<br>
+                     'Cause I'm in a field of dandelions<br>
+                     Wishing on every one that you'd be mine, mine<br>
+                     And I see forever in your eyes<br>
+                     I feel okay when I see you smile, smile<br>
+                     Wishing on dandelions all of the time<br>
+                     Praying to God that one day you'll be mine<br>
+                     Wishing on dandelions all of the time, all of the time<br>
+                     Dandelion, into the wind you go<br>
+                     Won't you let my darling know?<br>
+                     Dandelion, into the wind you go<br>
+                     Won't you let my darling know that?<br>
+                     I'm in a field of dandelions<br>
+                     Wishing on every one that you'd be mine, mine<br>
+                     And I see forever in your eyes<br>
+                     I feel okay when I see you smile, smile<br>
+                     Wishing on dandelions all of the time<br>
+                     Praying to God that one day you'll be mine<br>
+                     Wishing on dandelions all of the time, all of the time<br>
+                     I'm in a field of dandelions<br>
+                     Wishing on every one that you'd be mine, mine<br>
+                     Source: Musixmatch<br>
+                     Songwriters: Ruth Berhe</p>
+                    </div>
+    <script>
+        document.getElementById("toggleLyricsButton").addEventListener("click", function(){
+            var lyricsDiv = document.getElementById("lyrics");
+            var button = document.getElementById("toggleLyricsButton");
+        
+            if (lyricsDiv.style.display === "none") {
+                lyricsDiv.style.display = "block";
+                button.textContent = "Hide Lyrics";
+            } else {
+                lyricsDiv.style.display = "none";
+                button.textContent = "Show Lyrics";
+            }
+        });
+        
+    </script>
+</body>
+</html>
